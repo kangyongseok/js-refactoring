@@ -2,8 +2,8 @@ import statement from './index.js';
 import invoice from './data/invoices.json'
 import plays from './data/plays.json'
 
-describe('test', () => {
-  it('aaa', () => {
+describe('Chapter01', () => {
+  it('statement', () => {
     const result = statement(invoice, plays)
     expect(result).toBe(`청구내역 (고객명: BigCo)
  Hamlet: $650.00 (55석)
