@@ -8,3 +8,7 @@
 npm init -y
 npm i -D jest babel-jest @babel/core @babel/preset-env
 ```
+
+
+- 추출 작업전 지역변수부터 제거
+- 유효범위를 신경써야할 대상이 줄어든다.
