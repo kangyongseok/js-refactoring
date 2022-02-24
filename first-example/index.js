@@ -67,7 +67,7 @@ function totalAmount() {
   return result
 }
 
-function renderPlainText(invoice, plays) {
+function renderPlainText(data, invoice, plays) {
   let result = `청구내역 (고객명: ${invoice.customer})\n`;
   
   for (let perf of invoice.performances) {
@@ -80,7 +80,8 @@ function renderPlainText(invoice, plays) {
 }
 
 function statement(invoice, plays) {
-  return renderPlainText(invoice, plays)
+  const statementData = {};
+  return renderPlainText(statementData, invoice, plays)
 }
 
 module.exports = statement
