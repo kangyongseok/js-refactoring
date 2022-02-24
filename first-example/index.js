@@ -28,7 +28,7 @@ function amountFor(aPerformance) {
     default:
       throw new Error(`알 수 없는 장르: ${playFor(aPerformance).type}`)
   }
-  
+
   return result
 }
 
@@ -41,15 +41,18 @@ function volumeCreditsFor(aPerformance) {
   return result
 }
 
+function format(aNumber) {
+  return new Intl.NumberFormat("en-US", {
+    style: "currency", 
+    currency: "USD",
+    minimumFractionDigits: 2
+  }).format(aNumber);
+}
+
 function statement(invoice, plays) {
   let totalAmount = 0;
   let volumeCredits = 0;
   let result = `청구내역 (고객명: ${invoice.customer})\n`;
-  const format = new Intl.NumberFormat("en-US", {
-    style: "currency", 
-    currency: "USD",
-    minimumFractionDigits: 2
-  }).format;
   
   for (let perf of invoice.performances) {
     volumeCredits += volumeCreditsFor(perf);
