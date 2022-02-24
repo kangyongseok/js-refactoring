@@ -87,6 +87,7 @@ function statement(invoice, plays) {
 
   function enrichPerfomence(aPerformance) {
     const result = Object.assign({}, aPerformance) // 얕은 복사
+    result.play = playFor(result);
     return result
   }
 }
