@@ -50,7 +50,7 @@ function createStatementData(invoice, plays) {
     const calculator = new PerformanceCalculator(aPerformance, playFor(aPerformance)); // 공연료 계산기 
     const result = Object.assign({}, aPerformance) // 얕은 복사
     result.play = calculator.play
-    result.amount = amountFor(result)
+    result.amount = calculator.amount
     result.volumeCredits = volumeCreditsFor(result)
     return result
   }
