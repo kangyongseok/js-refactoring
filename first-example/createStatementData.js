@@ -1,4 +1,10 @@
 
+class PerformanceCalculator {
+  constructor(aPerformance) {
+    this.performance = aPerformance
+  }
+}
+
 function createStatementData(invoice, plays) {
   const statementData = {}
   statementData.customer = invoice.customer
@@ -17,6 +23,7 @@ function createStatementData(invoice, plays) {
   }
 
   function enrichPerfomence(aPerformance) {
+    const calculator = new PerformanceCalculator(aPerformance); // 공연료 계산기 
     const result = Object.assign({}, aPerformance) // 얕은 복사
     result.play = playFor(result)
     result.amount = amountFor(result)
