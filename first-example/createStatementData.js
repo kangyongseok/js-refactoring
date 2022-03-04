@@ -7,12 +7,6 @@ class PerformanceCalculator {
 
   get volumeCredits() {
     return Math.max(this.performance.audience - 30, 0)
-    // let result = 0
-    // result += Math.max(this.performance.audience - 30, 0)
-    // if ('comedy' === this.play.type)
-    //   result += Math.floor(this.performance.audience / 5)
-
-    // return result
   }
 
   get amount() {
