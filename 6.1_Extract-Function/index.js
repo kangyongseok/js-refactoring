@@ -1,22 +1,22 @@
 function printOwing(invoice) {
-  let outstanding = 0;
-
   printBanner();
+  let outstanding = calculateOutstanding(invoice);
+  recordDueDate(invoice)
+  printDetails(invoice, outstanding)
+}
 
-  // 미해결 채무를 계산한다
+function calculateOutstanding(invoice) {
+  let outstanding = 0;
   for (const o of invoice.orders) {
     outstanding += o.amount
   }
+  return outstanding
+}
 
-  recordDueDate(invoice)
-
-  printDetails(invoice, outstanding)
-
-  function printBanner() {
-    console.log("******************")
-    console.log("**** 고객 채무 ****")
-    console.log("******************")
-  }
+function printBanner() {
+  console.log("******************")
+  console.log("**** 고객 채무 ****")
+  console.log("******************")
 }
 
 function recordDueDate(invoice) {
